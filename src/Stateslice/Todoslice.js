@@ -13,10 +13,10 @@ const initialState = TodoAdapter.getInitialState({
   status: "idle",
 });
 
-const baseURL = "https://jsonplaceholder.typicode.com/todos?_limit=5";
+const baseURL = "https://jsonplaceholder.typicode.com/todos";
 
 export const FetchTodos = createAsyncThunk("/getTodo", async () => {
-  const response = await axios.get(`${baseURL}`);
+  const response = await axios.get(`${baseURL}?_limit=5`);
   return response.data;
 });
 
